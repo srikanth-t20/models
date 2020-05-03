@@ -226,7 +226,7 @@ def run_customized_training_loop(
     raise ValueError(
         'if `metric_fn` is specified, metric_fn must be a callable.')
 
-  callback_list = tf.keras.callbacks.CallbackList(custom_callbacks)
+  callback_list = tf.compat.v1.keras.callbacks.CallbackList(custom_callbacks)
 
   total_training_steps = steps_per_epoch * epochs
   train_iterator = _get_input_iterator(train_input_fn, strategy)
